@@ -10,27 +10,29 @@ include "includes/header.php";
 
 <!-- User info and navigation -->
 <div class="topbar">
-Welcome, <?= $_SESSION['username'] ?> |
-<a href="upload.php">Upload</a> |
-<a href="logout.php">Logout</a>
+    Welcome, <?= htmlspecialchars($_SESSION['username']) ?> |
+    <a href="upload.php">Upload</a> |
+    <a href="logout.php">Logout</a>
 </div>
 
 <h3>Gallery</h3>
 
 <div class="gallery">
+
 <?php
-// Fetch all images from database
-$stmt = $pdo->query("SELECT * FROM images ORDER BY uploaded_at DESC");
+// Fetch images
+$stmt = $pdo->query("SELECT * FROM images ORDER BY id DESC");
 
 while ($row = $stmt->fetch()) {
     echo "
     <div class='card'>
-        <img src='{$row['file_path']}'>
-        <h4>{$row['title']}</h4>
+        <img src='{$row['file_path']}' alt='image'>
+        <h4>" . htmlspecialchars($row['title']) . "</h4>
         <a class='delete' href='delete.php?id={$row['id']}'>Delete</a>
     </div>";
 }
 ?>
+
 </div>
 
 <?php include "includes/footer.php"; ?>
