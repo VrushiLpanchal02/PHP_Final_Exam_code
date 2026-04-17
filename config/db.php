@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$dbname = "image_gallery";
-$user = "root";
-$pass = "";
+$host = "sqlXXX.infinityfree.com";
+$dbname = "if0_41688395_dbname";
+$username = "if0_41688395";
+$password = "Azsxdc7929";
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);

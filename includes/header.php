@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Gallery</title>
+    <title>Image gallery</title>
+    <link rel="stylesheet" href="/PhP_final_project/assets/style.css">
 </head>
 <body>
-<h2>Image Gallery App</h2>
-<hr>
